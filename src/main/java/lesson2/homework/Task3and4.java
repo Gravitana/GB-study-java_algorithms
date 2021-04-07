@@ -19,6 +19,8 @@ public class Task3and4 {
             mArray[i] = rand.nextInt(400);
         }
 
+        int[] mArrayCopy = Arrays.copyOf(mArray, mArray.length);
+
         System.out.println(Arrays.toString(mArray));
 
         long start = System.nanoTime();
@@ -28,6 +30,8 @@ public class Task3and4 {
 
         System.out.println(Arrays.toString(mArray));
 
+        System.out.println("-----------------------------------");
+
     /*
         Задание 2.4
         На основе существующего массива данных из задания 2.3 реализуйте
@@ -36,7 +40,24 @@ public class Task3and4 {
         Сравните время выполнения алгоритмы сортировки методом sort() из
         задания 2.1 и сортировку пузырьком.
     */
+        System.out.println(Arrays.toString(mArrayCopy));
 
+        int temp;
+        int lastIndex = mArrayCopy.length - 1;
+        long startBubble = System.nanoTime();
+        for (int i = 0; i <= mArrayCopy.length - 1; i++) {
+            for (int j = 0; j < lastIndex; j++) {
+                if (mArrayCopy[j] > mArrayCopy[j + 1]) {
+                    temp = mArrayCopy[j];
+                    mArrayCopy[j] = mArrayCopy[j + 1];
+                    mArrayCopy[j + 1] = temp;
+                }
+            }
+            lastIndex--;
+        }
+        long finishBubble = System.nanoTime();
+        System.out.println("Прошло: " + (finishBubble - startBubble) + " нс");
 
+        System.out.println(Arrays.toString(mArrayCopy));
     }
 }
