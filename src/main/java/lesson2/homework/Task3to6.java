@@ -3,7 +3,7 @@ package lesson2.homework;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Task3to5 {
+public class Task3to6 {
     /*
         Задание 2.3
         Создайте массив размером 400 элементов.
@@ -22,8 +22,8 @@ public class Task3to5 {
         System.out.println("---------------- сортировка с помощью метода sort() -------------------");
         int[] mArrayCopy1 = Arrays.copyOf(mArrayOriginal, mArrayOriginal.length);
         System.out.println(Arrays.toString(mArrayCopy1));
-
         long start = System.nanoTime();
+
         Arrays.sort(mArrayCopy1);
         long finish = System.nanoTime();
         System.out.println("Прошло: " + (finish - start) + " нс");
@@ -42,10 +42,10 @@ public class Task3to5 {
         System.out.println("---------------- сортировка пузырьком -------------------");
         int[] mArrayCopy2 = Arrays.copyOf(mArrayOriginal, mArrayOriginal.length);
         System.out.println(Arrays.toString(mArrayCopy2));
+        long startBubble = System.nanoTime();
 
         int temp;
         int lastIndex = mArrayCopy2.length - 1;
-        long startBubble = System.nanoTime();
         for (int i = 0; i <= mArrayCopy2.length - 1; i++) {
             for (int j = 0; j < lastIndex; j++) {
                 if (mArrayCopy2[j] > mArrayCopy2[j + 1]) {
@@ -72,16 +72,14 @@ public class Task3to5 {
          */
         System.out.println("---------------- сортировка методом выбора -------------------");
         int[] mArrayCopy3 = Arrays.copyOf(mArrayOriginal, mArrayOriginal.length);
-//        int[] mArrayCopy3 = new int[]{8,0,1,2,3,4,5,6,7,8,999};
-//        int[] mArrayCopy3 = new int[]{9,8,7,6,5,4,3,2,1,0,999};
         System.out.println(Arrays.toString(mArrayCopy3));
+        long startChoose = System.nanoTime();
 
         lastIndex = mArrayCopy3.length - 1;
-        long startChoose = System.nanoTime();
         int maxValue;
         int indexOfMax;
 
-        for (int loop = 1; loop < mArrayCopy3.length; loop++) {
+        for (int n = 1; n < mArrayCopy3.length; n++) {
             maxValue = mArrayCopy3[0];
             indexOfMax = 0;
 
@@ -101,6 +99,39 @@ public class Task3to5 {
         System.out.println("Прошло: " + (finishChoose - startChoose) + " нс");
 
         System.out.println(Arrays.toString(mArrayCopy3));
+
+
+
+        /*
+            Задание 2.6
+            На основе массива данных из задания 2.3 реализуйте алгоритм сортировки методом вставки.
+            Оцените сортировку с помощью базового класса System.nanoTime().
+            Сравните с временем выполнения алгоритмов сортировки из прошлых
+            заданий 2.3, 2.4 и 2.5.
+         */
+        System.out.println("---------------- сортировка методом вставки -------------------");
+        int[] mArrayCopy4 = Arrays.copyOf(mArrayOriginal, mArrayOriginal.length);
+//        int[] mArrayCopy4 = new int[]{8,0,1,2,3,4,5,6,7,8,999};
+//        int[] mArrayCopy4 = new int[]{9,8,7,6,5,4,3,2,1,0,999};
+        System.out.println(Arrays.toString(mArrayCopy4));
+        long startInsert = System.nanoTime();
+
+        int tempInsert;
+        for (int n = 1; n < mArrayCopy4.length; n++) {
+            for (int i = n; i > 0 && (mArrayCopy4[i] < mArrayCopy4[i - 1]); i--) {
+                tempInsert = mArrayCopy4[i];
+                mArrayCopy4[i] = mArrayCopy4[i - 1];
+                mArrayCopy4[i - 1] = tempInsert;
+
+            }
+        }
+        long finishInsert = System.nanoTime();
+        System.out.println("Прошло: " + (finishInsert - startInsert) + " нс");
+
+        System.out.println(Arrays.toString(mArrayCopy4));
+
+
+
 
 
     }
