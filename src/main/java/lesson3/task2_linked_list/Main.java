@@ -1,0 +1,14 @@
+package lesson3.task2_linked_list;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+
+        list.insert("Artem");
+        list.insert("Roman");
+
+        list.display();
+
+        System.out.println("\n" + list.find("Artem"));
+    }
+}
