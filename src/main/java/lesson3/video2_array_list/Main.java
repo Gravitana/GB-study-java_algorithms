@@ -1,4 +1,4 @@
-package lesson3.task1_array_list;
+package lesson3.video2_array_list;
 
 import java.util.ArrayList;
 
@@ -21,6 +21,7 @@ public class Main {
         mArray.set(2, "Set");
 
         System.out.println(mArray);
+        System.out.println(mArray.get(2));
         System.out.println("======================================================");
 
         ArrayList<ArObj> mArrayObj = new ArrayList<>();
@@ -31,8 +32,8 @@ public class Main {
 
         mArrayObj.set(2, new ArObj(1, 2));
 
-        System.out.println(mArrayObj.get(1));
-        System.out.println(mArrayObj);
+        System.out.println(mArrayObj.get(1));    // выводит ссылки
+        System.out.println(mArrayObj);           // выводит ссылки
 
         System.out.println("======================================================");
 

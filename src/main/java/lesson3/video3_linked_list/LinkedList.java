@@ -1,4 +1,4 @@
-package lesson3.task2_linked_list;
+package lesson3.video3_linked_list;
 /*
     грубый пример самостоятельной реализации LinkedList
  */

@@ -1,4 +1,4 @@
-package lesson3.task1_array_list;
+package lesson3.video2_array_list;
 
 public class ArObj {
     private int x;
